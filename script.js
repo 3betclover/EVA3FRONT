@@ -44,7 +44,6 @@ function validar(apellidos, nombres, curso, nota1, nota2, nota3) {
         return false;
     }
 
-    
     const letraRegex = /^[A-Za-záéíóúÁÉÍÓÚüÜñÑ ]+$/;
     if (!letraRegex.test(apellidos) || !letraRegex.test(nombres)) {
         alert("Los campos de apellidos y nombres solo deben contener letras, tildes y espacios");
@@ -59,7 +58,6 @@ function validar(apellidos, nombres, curso, nota1, nota2, nota3) {
 
     return true;
 }
-
 
 function agregar() {
     const estudiante = capturar();
@@ -114,23 +112,17 @@ function actualizarTabla() {
     });
 }
 
-
-
 function getColorClass(nota) {
     return parseFloat(nota) < 40 ? 'nota-roja' : 'nota-verde';
 }
-
 
 function getPromedioClass(promedio) {
     return parseFloat(promedio) < 40 ? 'promedio-rojo' : 'promedio-verde';
 }
 
-
 function getSituacionClass(situacion) {
     return situacion === 'Reprobado' ? 'situacion-roja' : 'situacion-verde';
 }
-
-
 
 function editar(index) {
     const estudiante = estudiantes[index];
@@ -149,3 +141,4 @@ function eliminar(index) {
         actualizarTabla();
     }
 }
+
