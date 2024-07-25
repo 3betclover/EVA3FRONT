@@ -1,7 +1,7 @@
 class Estudiante {
-    constructor(apellido, nombre, curso, nota1, nota2, nota3) {
-        this.apellido = apellido;
-        this.nombre = nombre;
+    constructor(apellidos, nombres, curso, nota1, nota2, nota3) {
+        this.apellidos = apellidos;
+        this.nombres = nombres;
         this.curso = curso;
         this.nota1 = nota1;
         this.nota2 = nota2;
@@ -12,7 +12,7 @@ class Estudiante {
 
     calcularPromedio() {
         const promedio = (parseFloat(this.nota1) + parseFloat(this.nota2) + parseFloat(this.nota3)) / 3;
-        return Math.ceil(promedio);
+        return Math.round(promedio);
     }
 
     determinarSituacion() {
@@ -24,23 +24,23 @@ let estudiantes = [];
 let editIndex = -1;
 
 function capturar() {
-    const apellido = document.getElementById('apellido').value;
-    const nombre = document.getElementById('nombre').value;
+    const apellidos = document.getElementById('apellidos').value;
+    const nombres = document.getElementById('nombres').value;
     const curso = document.getElementById('curso').value;
     const nota1 = document.getElementById('nota1').value;
     const nota2 = document.getElementById('nota2').value;
     const nota3 = document.getElementById('nota3').value;
 
-    if (validar(apellido, nombre, curso, nota1, nota2, nota3)) {
-        return new Estudiante(apellido, nombre, curso, nota1, nota2, nota3);
+    if (validar(apellidos, nombres, curso, nota1, nota2, nota3)) {
+        return new Estudiante(apellidos, nombres, curso, nota1, nota2, nota3);
     } else {
         alert("Todos los campos son obligatorios");
         return null;
     }
 }
 
-function validar(apellido, nombre, curso, nota1, nota2, nota3) {
-    return apellido && nombre && curso && nota1 && nota2 && nota3;
+function validar(apellidos, nombres, curso, nota1, nota2, nota3) {
+    return apellidos && nombres && curso && nota1 && nota2 && nota3;
 }
 
 function agregar() {
@@ -63,8 +63,8 @@ function actualizarTabla() {
 
     estudiantes.forEach((estudiante, index) => {
         const row = tbody.insertRow();
-        row.insertCell(0).innerText = estudiante.apellido;
-        row.insertCell(1).innerText = estudiante.nombre;
+        row.insertCell(0).innerText = estudiante.apellidos;
+        row.insertCell(1).innerText = estudiante.nombres;
         row.insertCell(2).innerText = estudiante.curso;
         row.insertCell(3).innerText = estudiante.nota1;
         row.insertCell(4).innerText = estudiante.nota2;
@@ -91,8 +91,8 @@ function actualizarTabla() {
 
 function editar(index) {
     const estudiante = estudiantes[index];
-    document.getElementById('apellido').value = estudiante.apellido;
-    document.getElementById('nombre').value = estudiante.nombre;
+    document.getElementById('apellidos').value = estudiante.apellidos;
+    document.getElementById('nombres').value = estudiante.nombres;
     document.getElementById('curso').value = estudiante.curso;
     document.getElementById('nota1').value = estudiante.nota1;
     document.getElementById('nota2').value = estudiante.nota2;

@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Estudiantes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Registro de Estudiantes</h1>
         <form id="formulario">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" name="nombres" required>
             <label for="curso">Curso:</label>
             <input type="text" id="curso" name="curso" required>
             <label for="nota1">Nota 1:</label>
-            <input type="numTobarber" id="nota1" name="nota1" required>
+            <input type="number" id="nota1" name="nota1" required>
             <label for="nota2">Nota 2:</label>
             <input type="number" id="nota2" name="nota2" required>
             <label for="nota3">Nota 3:</label>
@@ -26,8 +27,8 @@
         <table id="tabla-estudiantes">
             <thead>
                 <tr>
-                    <th>Apellido</th>
-                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Nombres</th>
                     <th>Curso</th>
                     <th>Nota 1</th>
                     <th>Nota 2</th>
