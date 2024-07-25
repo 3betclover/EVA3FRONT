@@ -1,9 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+    .container {
+        width: 80%;
+    }
+
+    #tabla-estudiantes {
+        font-size: 16px;
+    }
 }
 
 .container {
@@ -14,6 +22,10 @@ body {
     width: 90%;
     max-width: 600px;
     margin: auto;
+    overflow-x: auto; 
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 h1 {
@@ -40,7 +52,7 @@ input {
 button {
     margin-top: 20px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #00b38c;
     color: white;
     border: none;
     border-radius: 4px;
@@ -48,46 +60,54 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #3ddd1d;
 }
 
-table {
+#tabla-estudiantes {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-th, td {
+#tabla-estudiantes th, #tabla-estudiantes td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
 
-th {
-    background-color: #007bff;
+#tabla-estudiantes th {
+    background-color: #00b38c;
     color: white;
 }
 
-tr:nth-child(even) {
+#tabla-estudiantes tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-tr:hover {
+#tabla-estudiantes tr:hover {
     background-color: #ddd;
 }
 
 .actions {
     display: flex;
-    gap: 5px;
+    flex-direction: column;
+    align-items: center; 
 }
 
 .actions button {
-    padding: 5px;
+    width: 100%; 
+    max-width: 100px; 
+    margin: 0;
+    padding: 8px; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 12px;
+    margin-bottom: 3px; 
 }
 
 .actions .edit {
@@ -100,12 +120,26 @@ tr:hover {
     color: white;
 }
 
-@media (min-width: 600px) {
-    .container {
-        width: 80%;
-    }
+.nota-roja {
+    color: red;
+}
 
-    table {
-        font-size: 16px;
-    }
+.nota-verde {
+    color: green;
+}
+
+.promedio-rojo {
+    color: red;
+}
+
+.promedio-verde {
+    color: green;
+}
+
+.situacion-roja {
+    color: red;
+}
+
+.situacion-verde {
+    color: green;
 }
